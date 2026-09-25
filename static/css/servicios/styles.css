@@ -1,0 +1,476 @@
+
+    /* --- IMPORTAR FUENTE REDONDEADA Y LINDA (Quicksand) --- */
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+    /* --- RESET BÃSICO --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* --- PALETA MODO CLARO (Por defecto) --- */
+    :root {
+      --color-fondo: #FAF8F5;       /* Marfil muy suave */
+      --color-tarjeta: #F4EFEB;     /* Beige claro */
+      --color-blanco: #FFFFFF;      /* Fondos limpios */
+      --color-texto: #3D3835;       /* Gris cÃ¡lido oscuro */
+      --color-texto-suave: #55504C; /* Texto secundario */
+      --color-dorado: #C4A27A;      /* Dorado sobrio */
+      --color-borde: #E2D7CC;       /* Borde beige neutro */
+      --color-header: rgba(250, 248, 245, 0.95);
+      
+      --fuente-principal: 'Georgia', serif;
+      --fuente-secundaria: 'Helvetica Neue', Arial, sans-serif;
+      --fuente-redondeada: 'Quicksand', sans-serif;
+    }
+
+    /* --- PALETA MODO OSCURO --- */
+    body.dark-mode {
+      --color-fondo: #1A1816;       /* Fondo oscuro sofisticado */
+      --color-tarjeta: #26221E;     /* Tarjetas oscuras */
+      --color-blanco: #2A2622;      /* Tono grafito */
+      --color-texto: #F3EFE9;       /* Texto claro */
+      --color-texto-suave: #D1C9C1; /* Texto secundario claro */
+      --color-borde: #3D3630;       /* Bordes sutiles */
+      --color-header: rgba(26, 24, 22, 0.95);
+    }
+
+    body {
+      font-family: var(--fuente-secundaria);
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* --- BARRA SUPERIOR FIJA --- */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: var(--color-header);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid var(--color-borde);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 15px;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .menu-checkbox {
+      display: none;
+    }
+
+    .hamburger-btn {
+      width: 44px;
+      height: 44px;
+      background-color: var(--color-blanco);
+      border: 1px solid var(--color-borde);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .hamburger-btn:hover {
+      background-color: var(--color-tarjeta);
+    }
+
+    .hamburger-btn span {
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-texto);
+      border-radius: 2px;
+    }
+
+    .header-logo-ec {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-img-mini {
+      height: 45px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* TÃTULO EN HEADER */
+    .header-brand-title {
+      font-family: var(--fuente-redondeada);
+      font-size: 1.05rem;
+      color: var(--color-dorado);
+      letter-spacing: 2px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    /* --- NAVEGACIÃ“N LATERAL (SIDEBAR) --- */
+    .sidebar {
+      width: 280px;
+      background-color: var(--color-blanco);
+      border-right: 1px solid var(--color-borde);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      z-index: 101;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-checkbox:checked ~ .sidebar {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .sidebar-logo-img {
+      height: 55px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      font-size: 1.8rem;
+      color: var(--color-texto);
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 5px;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: var(--color-dorado);
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-bottom: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-texto);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: var(--color-tarjeta);
+      color: var(--color-dorado);
+      font-weight: bold;
+    }
+
+    .theme-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--color-dorado);
+      color: var(--color-texto);
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--color-dorado);
+      color: #FFFFFF;
+    }
+
+    /* --- CONTENIDO PRINCIPAL --- */
+    .main-content {
+      margin-top: 70px;
+      padding: 60px 20px;
+      max-width: 1100px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      flex: 1;
+    }
+
+    .servicios-hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .servicios-titulo {
+      font-family: var(--fuente-redondeada);
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--color-dorado);
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .servicios-intro {
+      font-family: var(--fuente-redondeada);
+      font-size: 1rem;
+      color: var(--color-texto-suave);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+
+    /* --- SERVICIOS CENTRADOS UNO ABAJO DEL OTRO --- */
+    .servicios-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra las tarjetas horizontalmente */
+      gap: 30px;
+    }
+
+    .tarjeta-servicio {
+      background-color: var(--color-tarjeta);
+      border: 1px solid var(--color-borde);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1000px; /* Ancho mÃ¡ximo para mantener uniformidad visual */
+      height: 250px; /* Altura uniforme para la tarjeta */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .tarjeta-servicio:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    /* INFORMACIÃ“N EN EL CENTRO */
+    .servicio-info {
+      flex: 1;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; /* Texto centrado en el medio */
+    }
+
+    .tarjeta-servicio h3 {
+      font-family: var(--fuente-redondeada);
+      color: var(--color-dorado);
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .tarjeta-servicio p {
+      font-family: var(--fuente-redondeada);
+      color: var(--color-texto-suave);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+
+    /* CONTENEDORES DE IMÃGENES IZQUIERDA Y DERECHA */
+    .servicio-img-container {
+      width: 240px; /* Ancho de cada imagen lateral */
+      height: 100%;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .servicio-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Mantiene la proporciÃ³n sin deformar */
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .tarjeta-servicio:hover .servicio-img {
+      transform: scale(1.05);
+    }
+
+    /* RESPONSIVE PARA PANTALLAS PEQUEÃ‘AS (MÃ“VILES) */
+    @media (max-width: 768px) {
+      .tarjeta-servicio {
+        flex-direction: column; /* Apila las imÃ¡genes y el texto verticalmente */
+        height: auto;
+      }
+
+      .servicio-img-container {
+        width: 100%;
+        height: 180px; /* Altura de las fotos en celulares */
+      }
+
+      .servicio-info {
+        padding: 25px 20px;
+      }
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background-color: var(--color-tarjeta);
+      border-top: 1px solid var(--color-borde);
+      padding: 50px 20px 30px 20px;
+      text-align: center;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .footer-contenido {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer-redes {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .btn-red {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 22px;
+      border: 1px solid var(--color-borde);
+      background-color: var(--color-blanco);
+      color: var(--color-texto);
+      text-decoration: none;
+      border-radius: 30px;
+      font-family: var(--fuente-redondeada);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-red svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-texto);
+      transition: fill 0.3s ease;
+    }
+
+    .btn-red:hover {
+      border-color: var(--color-dorado);
+      color: var(--color-dorado);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(196, 162, 122, 0.15);
+    }
+
+    .btn-red:hover svg {
+      fill: var(--color-dorado);
+    }
+
+    .footer-derechos {
+      font-family: var(--fuente-redondeada);
+      font-size: 0.85rem;
+      color: var(--color-texto-suave);
+      margin-top: 15px;
+      transition: color 0.3s ease;
+    }
+
+    /* --- BOTONES FLOTANTES --- */
+    .btn-whatsapp-flotante {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 99;
+      background-color: var(--color-tarjeta);
+      border: 1px solid var(--color-dorado);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-whatsapp-flotante .icono-chat {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: var(--color-dorado);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s ease;
+    }
+
+    .btn-whatsapp-flotante:hover {
+      transform: scale(1.08);
+      background-color: var(--color-dorado);
+    }
+
+    .btn-whatsapp-flotante:hover .icono-chat {
+      stroke: #FFFFFF;
+    }
+
+    #btnTop {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 25px;
+      z-index: 98;
+      border: 1px solid var(--color-dorado);
+      background-color: var(--color-blanco);
+      color: var(--color-dorado);
+      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    #btnTop:hover {
+      background-color: var(--color-dorado);
+      color: #FFFFFF;
+      transform: translateY(-3px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }

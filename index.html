@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Estudio Celebrarte - Organización de Eventos">
+  <meta property="og:description" content="Diseño y ambientación para tus celebraciones.">
+  <meta property="og:image" content="link-de-tu-imagen.jpg">
+  <meta name="description" content="Estudio Celebrarte: Organización, ambientación y diseño de eventos. Hacemos tu celebración inolvidable.">
+  <title>Estudio Celebrarte</title>
+  <link rel="icon" type="image/png" href="/static/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index/styles.css">
+</head>
+<body>
+
+  <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+
+  <!-- BARRA SUPERIOR CON LOGO -->
+  <header class="top-bar">
+    <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <a href="#inicio" class="header-logo-ec">
+      <img src="static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="logo-img-mini">
+      <span class="header-brand-title">ESTUDIO CELEBRARTE</span>
+    </a>
+  </header>
+
+  <!-- NAVEGACIÓN LATERAL CON LOGO -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <img src="static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="sidebar-logo-img">
+      <label for="menu-toggle" class="close-btn">&times;</label>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Inicio</a></li>
+      <li><a href="galeria.html" class="nav-link">Galería y fotolibros</a></li>
+      <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+      <li><a href="nosotros.html" class="nav-link">Contacto</a></li>
+      <li>
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+          <span id="themeText">Modo Oscuro</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    
+    <!-- BANNER HERO PRINCIPAL -->
+    <section class="hero-banner">
+      <img src="static/images/logo.png" alt="Estudio Celebrarte Logo" class="hero-logo-principal">
+      <p class="eslogan">Diseñando momentos únicos, desde la primera invitación hasta el último recuerdo.</p>
+    </section>
+
+    <section class="inicio-seccion">
+      <div class="historia-contenedor" id="nosotros" style="scroll-margin-top: 100px;">
+        <h2 class="subtitulo-seccion" style="text-align: left;">Nuestra historia y pasión</h2>
+        
+        <p class="parrafo-historia">
+          <strong>Estudio Celebrarte</strong> nació como un pequeño microemprendimiento impulsado por el amor a los detalles y el arte en papel. Lo que comenzó en un taller hogareño cortando pliegos a mano y diseñando las primeras tarjetas para amigos, se convirtió con el tiempo en un estudio integral dedicado a dar vida a celebraciones inolvidables.
+        </p>
+        <p class="parrafo-historia">
+          Nos especializamos en transformar ideas en experiencias tangibles y digitales. Combinamos la calidez del trabajo artesanal —tarjetería fina, ambientación en papel y fotolibros encuadernados con dedicación— con la innovación del diseño digital, creando invitaciones interactivas y material exclusivo para todo tipo de festejos.
+        </p>
+      </div>
+
+      <div id="galeria" style="scroll-margin-top: 100px;">
+        <h2 class="subtitulo-seccion">Galería y fotolibros</h2>
+        <div class="carrusel-contenedor">
+          <div class="carrusel-pistas">
+            
+            <div class="carrusel-item">
+              <img src="static/images/imagen1.jpeg" alt="Menú para invitados">
+              <div class="carrusel-leyenda">Menú para invitados</div>
+            </div>
+
+            <div class="carrusel-item">
+              <img src="static/images/souvenir.jpg" alt="Souvenirs especiales">
+              <div class="carrusel-leyenda">Souvenirs especiales</div>
+            </div>
+
+            <div class="carrusel-item">
+              <img src="static/images/invitacionimpresa.jpeg" alt="Invitaciones personalizadas">
+              <div class="carrusel-leyenda">Invitaciones personalizadas</div>
+            </div>
+
+            <div class="carrusel-item">
+              <img src="static/images/numeromesa.jpg" alt="Detalles de ambientación">
+              <div class="carrusel-leyenda">Ambientación de eventos</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cronograma-seccion" id="cronograma">
+      <div class="cronograma-header">
+        <h2 class="nosotros-titulo">Cronograma de Organización</h2>
+          <p class="nosotros-intro" style="font-family: 'Quicksand', sans-serif !important;">
+            Un paso a paso pensado para disfrutar cada etapa de tu celebración con tranquilidad.
+          </p>
+      </div>
+
+      <div class="cronograma-grid">
+
+        <div class="cronograma-card">
+          <div class="cronograma-meta">
+            <span class="cronograma-num">01</span>
+            <span class="cronograma-badge">De 12 a 18 meses antes</span>
+          </div>
+          <h3 class="cronograma-card-titulo">Concepto y reserva</h3>
+          <ul class="cronograma-lista">
+            <li>Definir el presupuesto y la cantidad estimada de invitados.</li>
+            <li>Elegir la temática y estilo general del evento.</li>
+            <li>Reservar el salón y confirmar la fecha.</li>
+          </ul>
+        </div>
+
+        <div class="cronograma-card">
+          <div class="cronograma-meta">
+            <span class="cronograma-num">02</span>
+            <span class="cronograma-badge">De 4 a 6 meses antes</span>
+          </div>
+          <h3 class="cronograma-card-titulo">Diseño y proveedores</h3>
+          <ul class="cronograma-lista">
+            <li>Contratar catering, DJ y fotógrafo.</li>
+            <li><strong>Estudio Celebrarte:</strong> diseñar invitaciones y fotolibros.</li>
+            <li>Definir estilo de vestuario y ambientación.</li>
+          </ul>
+        </div>
+
+        <div class="cronograma-card">
+          <div class="cronograma-meta">
+            <span class="cronograma-num">03</span>
+            <span class="cronograma-badge">De 2 a 3 meses antes</span>
+          </div>
+          <h3 class="cronograma-card-titulo">Papelería y envíos</h3>
+          <ul class="cronograma-lista">
+            <li>Entrega de invitaciones impresas o digitales (RSVP).</li>
+            <li><strong>Estudio Celebrarte:</strong> diseñar el plano de distribución de las mesas.</li>
+            <li>Pruebas finales de vestuario y menú.</li>
+          </ul>
+        </div>
+
+        <div class="cronograma-card">
+          <div class="cronograma-meta">
+            <span class="cronograma-num">04</span>
+            <span class="cronograma-badge">1 mes antes</span>
+          </div>
+          <h3 class="cronograma-card-titulo">Detalles Finales</h3>
+          <ul class="cronograma-lista">
+            <li>Confirmar lista definitiva de invitados.</li>
+            <li>Cerrar el cronograma técnico con el salón.</li>
+            <li><strong>Estudio Celebrarte:</strong> Retiro de souvenirs y libro de firmas.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="testimonios-seccion" id="servicios" style="scroll-margin-top: 100px;">
+      <h2 class="subtitulo-seccion">Lo que dicen nuestros clientes</h2>
+      
+      <div class="testimonios-grid">
+        
+        <div class="testimonio-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="testimonio-texto">"Las tarjetas de casamiento superaron todas nuestras expectativas. El nivel de detalle en el papel y la prolijidad son increíbles. ¡Todos los invitados nos felicitaron!"</p>
+          <span class="testimonio-autor">Cliente Satisfecho</span>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="testimonio-texto">"Encargamos el fotolibro del primer año de nuestra hija y quedó hermoso. El asesoramiento y la paciencia durante la elección del diseño fueron impecables."</p>
+          <span class="testimonio-autor">Mamá Agradecida</span>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="testimonio-texto">"Fueron muy responsables con los plazos de entrega, y la papelería del evento combinó a la perfección. Da gusto contratar emprendimientos con tanto amor por lo que hacen."</p>
+          <span class="testimonio-autor">Organizador de Evento</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq-seccion">
+      <h2 class="subtitulo-seccion">Preguntas Frecuentes</h2>
+      
+      <div class="faq-contenedor">
+        
+        <details class="faq-item">
+          <summary>¿Con cuánta anticipación debo hacer mi pedido?</summary>
+          <div class="faq-respuesta">
+            Recomendamos realizar los pedidos de papelería física con entre 3 y 4 semanas de anticipación para coordinar el diseño, las muestras y la impresión. Para invitaciones digitales o fotolibros sencillos, el plazo suele ser de 10 a 15 días.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo personalizar los colores y diseños a mi gusto?</summary>
+          <div class="faq-respuesta">
+            ¡Sí, totalmente! Cada trabajo es único. Adaptamos las tipografías, la paleta de colores y los motivos según la temática de tu evento para que todo combine en armonía.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Hacen envíos a todo el país?</summary>
+          <div class="faq-respuesta">
+            Realizamos envíos a todo el país mediante correo o transporte. También podés coordinar el retiro en nuestro taller de forma presencial.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo es el proceso de pago?</summary>
+          <div class="faq-respuesta">
+            Trabajamos con una seña del 50% para dar inicio al diseño y producción del pedido, y el saldo restante se abona al momento de la entrega o envío de los productos finalizados.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/+5491161277512?text=Hola!%20Quisiera%20consultar%20por%20los%20servicios%20de%20Estudio%20Celebrarte" class="btn-whatsapp-flotante" target="_blank" aria-label="Contacto por WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.099 4.016 4.062-1.065z"/>
+    </svg>
+  </a>
+
+  <!-- PIE DE PÁGINA CON LOGO -->
+  <footer class="footer" id="contacto">
+    <div class="footer-contenido">
+      <img src="static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="footer-logo-img">
+      <p style="font-family: var(--fuente-redondeada); font-size: 0.95rem; color: #55504C;">
+        Diseño integral para eventos y recuerdos artesanales.
+      </p>
+
+      <div class="footer-servicios-grid">
+        
+        <div class="footer-columna">
+          <span class="footer-subtitulo">Papelería creativa</span>
+          <ul>
+            <li>Tarjetería e invitaciones web interactivas</li>
+            <li>Menús de mesa personalizados</li>
+            <li>Señaladores de sitio y place cards</li>
+            <li>Cartelería de bienvenida</li>
+            <li>Kits imprimibles y souvenirs</li>
+          </ul>
+        </div>
+
+        <div class="footer-columna">
+          <span class="footer-subtitulo">Fotolibros y recuerdos</span>
+          <ul>
+            <li>Fotolibros de bodas y fiestas de 15 años</li>
+            <li>Álbumes infantiles y del primer año</li>
+            <li>Encuadernación artesanal con tapa dura</li>
+            <li>Souvenirs y cajitas personalizadas</li>
+            <li>Libros de firmas y deseos</li>
+          </ul>
+        </div>
+
+        <div class="footer-columna">
+          <span class="footer-subtitulo">Diseño digital</span>
+          <ul>
+            <li>Invitaciones Digitales Interactivas</li>
+            <li>Avisos de reserva de fecha (Save the Date), estáticos y animados</li>
+            <li>Confirmación de asistencia (RSVP)</li>
+            <li>Diseño gráfico para eventos</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-redes">
+        <a href="https://www.instagram.com/estudiocelebrarte/?utm_source=ig_web_button_share_sheet" target="_blank" class="btn-red">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://facebook.com" target="_blank" class="btn-red">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </div>
+
+      <p class="footer-derechos">&copy; 2026 Estudio Celebrarte. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btnTop" title="Volver arriba">&#8679;</button>
+
+  <script>
+    // --- CONTROL DEL BOTÓN IR ARRIBA ---
+    const btnTop = document.getElementById("btnTop");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btnTop.style.display = "block";
+      } else {
+        btnTop.style.display = "none";
+      }
+    };
+
+    if (btnTop) {
+      btnTop.addEventListener("click", function() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
+
+    // --- CERRAR MENÚ LATERAL AUTOMÁTICAMENTE AL SELECCIONAR SECCIÓN ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuToggle) menuToggle.checked = false;
+      });
+    });
+
+    // --- CONTROL DEL MODO OSCURO / CLARO ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeText = document.getElementById('themeText');
+
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeText.textContent = 'Modo Claro';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      const isDark = document.body.classList.contains('dark-mode');
+
+      if (isDark) {
+        themeText.textContent = 'Modo Claro';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeText.textContent = 'Modo Oscuro';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+</body>
+</html>

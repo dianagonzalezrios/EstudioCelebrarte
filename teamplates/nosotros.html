@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Estudio Celebrarte - Organización de Eventos">
+  <meta property="og:description" content="Diseño y ambientación para tus celebraciones.">
+  <meta property="og:image" content="logo.png">
+  <meta name="description" content="Estudio Celebrarte: Organización, ambientación y diseño de eventos. Hacemos tu celebración inolvidable.">
+  <title>Sobre Nosotros - Estudio Celebrarte</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="../static/css/nosotros/styles.css">
+</head>
+<body>
+
+  <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+
+  <header class="top-bar">
+    <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <a href="index.html" class="header-logo-ec">
+      <img src="../static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="logo-img-mini">
+      <span class="header-brand-title">ESTUDIO CELEBRARTE</span>
+    </a>
+  </header>
+
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <img src="../static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="sidebar-logo-img">
+      <label for="menu-toggle" class="close-btn">&times;</label>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="galeria.html">Galería y fotolibros</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="nosotros.html" class="active">Contacto</a></li>
+      <li>
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+          <span id="themeText">Modo Oscuro</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+
+    <section class="nosotros-hero">
+      <img src="../static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="hero-logo-principal">
+      <h1 class="nosotros-titulo">Nuestra Esencia & Taller</h1>
+      <p class="nosotros-intro">
+        Creemos que los momentos más importantes de la vida merecen ser guardados con alma. Detrás de cada tarjeta, souvenir y fotolibro hay un trabajo artesanal minucioso, dedicado a convertir tus recuerdos y celebraciones en piezas físicas y digitales inolvidables.
+      </p>
+    </section>
+
+    <section class="info-grid">
+
+      <div class="info-card">
+        <div>
+          <h2 class="info-card-titulo">Dónde estamos</h2>
+          <p class="info-card-texto">
+            Nuestro taller principal se encuentra listo para recibirte con cita previa o coordinar tus envíos.
+          </p>
+        </div>
+        <a href="https://maps.app.goo.gl/sT6jw5KGLBL8BVGC6" target="_blank" class="btn-accion">
+          📍 Ver nuestra ubicación
+        </a>
+      </div>
+
+      <div class="info-card">
+        <div>
+          <h2 class="info-card-titulo">Escribinos por correo</h2>
+          <p class="info-card-texto">
+            Podés escribirnos a: <strong>diana.lorena.gr@gmail.com</strong>
+          </p>
+        </div>
+        
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=diana.lorena.gr@gmail.com&su=Consulta%20Estudio%20Celebrarte" target="_blank" class="btn-accion" style="margin-bottom: 10px;">
+          ✉️ Redactar en Gmail
+        </a>
+
+        <button type="button" onclick="copiarEmail()" class="btn-accion btn-copiar-style" id="btn-copiar">
+          📋 Copiar correo electrónico
+        </button>
+      </div>
+
+    </section>
+
+    <section class="newsletter-seccion">
+      <h2 class="nosotros-titulo" style="font-size: 1.6rem;">¿Querés recibir novedades o presupuestos?</h2>
+      <p class="info-card-texto" style="margin-bottom: 0;">
+        Dejanos tu correo electrónico y nos pondremos en contacto con vos.
+      </p>
+      <form class="newsletter-form" action="https://formspree.io/f/xvkoglpb" method="POST">
+        <input type="email" name="email_del_cliente" class="newsletter-input" placeholder="Tu correo electrónico..." required>
+        <button type="submit" class="btn-enviar-mail">Enviar correo</button>
+      </form>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/+5491161277512?text=Hola!%20Quisiera%20consultar%20por%20los%20servicios%20de%20Estudio%20Celebrarte" class="btn-whatsapp-flotante" target="_blank" aria-label="Contacto por WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.099 4.016 4.062-1.065z"/>
+    </svg>
+  </a>
+
+  <footer class="footer">
+    <img src="../static/images/logo.png" alt="Logotipo de Estudio Celebrarte" class="footer-logo-img">
+    <p class="footer-derechos">&copy; 2026 Estudio Celebrarte. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btnTop" title="Volver arriba">&#8679;</button>
+
+  <script>
+    // --- FUNCIÓN COPIAR EMAIL ---
+    function copiarEmail() {
+      const email = "diana.lorena.gr@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById("btn-copiar");
+        btn.innerText = "¡Copiado! ✓";
+        setTimeout(() => {
+          btn.innerText = "📋 Copiar correo electrónico";
+        }, 2500);
+      });
+    }
+
+    // --- CONTROL DEL BOTÓN VOLVER ARRIBA ---
+    const btnTop = document.getElementById("btnTop");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btnTop.style.display = "block";
+      } else {
+        btnTop.style.display = "none";
+      }
+    };
+
+    if (btnTop) {
+      btnTop.addEventListener("click", function() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
+
+    // --- CONTROL DEL MODO OSCURO / CLARO ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeText = document.getElementById('themeText');
+
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      if (themeText) themeText.textContent = 'Modo Claro';
+    }
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        const isDark = document.body.classList.contains('dark-mode');
+
+        if (isDark) {
+          if (themeText) themeText.textContent = 'Modo Claro';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          if (themeText) themeText.textContent = 'Modo Oscuro';
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

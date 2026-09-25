@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- PALETA MODO CLARO (Por defecto) --- */
+:root {
+    --color-fondo: #FAF8F5;
+    /* Marfil muy suave */
+    --color-tarjeta: #F4EFEB;
+    /* Beige claro */
+    --color-blanco: #FFFFFF;
+    /* Fondos limpios */
+    --color-texto: #3D3835;
+    /* Gris cálido oscuro */
+    --color-texto-suave: #55504C;
+    /* Texto secundario */
+    --color-dorado: #C4A27A;
+    /* Dorado sobrio */
+    --color-borde: #E2D7CC;
+    /* Borde beige neutro */
+    --color-header: rgba(255, 255, 255, 0.95);
+
+    --fuente-secundaria: 'Helvetica Neue', Arial, sans-serif;
+    --fuente-redondeada: 'Quicksand', sans-serif;
+    --fuente-eslogan: 'Lavishly Yours', cursive;
+}
+
+/* --- PALETA MODO OSCURO --- */
+body.dark-mode {
+    --color-fondo: #1A1816;
+    /* Fondo oscuro sofisticado */
+    --color-tarjeta: #26221E;
+    /* Tarjetas oscuras */
+    --color-blanco: #2A2622;
+    /* Tono grafito */
+    --color-texto: #F3EFE9;
+    /* Texto claro */
+    --color-texto-suave: #D1C9C1;
+    /* Texto secundario claro */
+    --color-borde: #3D3630;
+    /* Bordes sutiles */
+    --color-header: rgba(38, 34, 30, 0.95);
+}
+
+body {
+    font-family: var(--fuente-secundaria);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- BARRA SUPERIOR FIJA --- */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-header);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--color-borde);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 15px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger-btn {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.hamburger-btn:hover {
+    background-color: var(--color-tarjeta);
+}
+
+.hamburger-btn span {
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+}
+
+.header-logo-ec {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+/* ESTILO DE IMAGEN DE LOGO EN HEADER */
+.logo-img-mini {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-brand-title {
+    font-family: var(--fuente-secundaria);
+    font-size: 1.05rem;
+    color: var(--color-dorado);
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+/* --- NAVEGACIÓN LATERAL --- */
+.sidebar {
+    width: 280px;
+    background-color: var(--color-blanco);
+    border-right: 1px solid var(--color-borde);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 101;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.menu-checkbox:checked~.sidebar {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.sidebar-logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.close-btn {
+    font-size: 1.8rem;
+    color: var(--color-texto-suave);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.close-btn:hover {
+    color: var(--color-texto);
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto-suave);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--color-tarjeta);
+    color: var(--color-dorado);
+    font-weight: bold;
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--color-tarjeta);
+    border-color: var(--color-dorado);
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    padding: 110px 20px 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-banner {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-logo-principal {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* TÍTULO PRINCIPAL (Dorado) */
+.titulo-principal {
+    font-family: var(--fuente-secundaria);
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    color: var(--color-dorado);
+    margin-bottom: 12px;
+    font-weight: normal;
+}
+
+.eslogan {
+    font-family: var(--fuente-eslogan) !important;
+    font-size: 2.3rem;
+    color: var(--color-texto);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.inicio-seccion {
+    padding: 20px 10px;
+    margin-bottom: 60px;
+}
+
+.historia-contenedor {
+    display: block;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* SUBTÍTULOS DE SECCIÓN (Dorado) */
+.subtitulo-seccion {
+    font-family: var(--fuente-secundaria);
+    font-size: 1.8rem;
+    color: var(--color-dorado);
+    margin-bottom: 25px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* CUERPO DE TEXTO DE HISTORIA */
+.parrafo-historia {
+    font-family: var(--fuente-redondeada);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--color-texto);
+    margin-bottom: 20px;
+}
+
+/* --- CARRUSEL EN CSS --- */
+.carrusel-contenedor {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--color-borde);
+    position: relative;
+    background-color: var(--color-tarjeta);
+}
+
+.carrusel-pistas {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: carruselAnimacion 16s infinite ease-in-out;
+}
+
+.carrusel-item {
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carrusel-leyenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: #FFFFFF;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    text-align: center;
+    font-family: var(--fuente-redondeada);
+    letter-spacing: 1px;
+}
+
+@keyframes carruselAnimacion {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    45% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    70% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-75%);
+    }
+
+    95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* --- TESTIMONIOS --- */
+.testimonios-seccion {
+    margin-bottom: 70px;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.testimonio-card {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-4px);
+}
+
+.estrellas {
+    color: var(--color-dorado);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.testimonio-texto {
+    font-family: var(--fuente-redondeada);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonio-autor {
+    font-family: var(--fuente-secundaria);
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- PREGUNTAS FRECUENTES --- */
+.faq-seccion {
+    margin-bottom: 70px;
+}
+
+.faq-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* PREGUNTAS / TÍTULOS EN FAQ (Dorado) */
+.faq-item summary {
+    padding: 18px 20px;
+    font-family: var(--fuente-redondeada);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-dorado);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    color: var(--color-dorado);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '−';
+}
+
+.faq-item summary:hover {
+    background-color: var(--color-tarjeta);
+}
+
+/* RESPUESTA / CUERPO EN FAQ */
+.faq-respuesta {
+    padding: 0 20px 20px 20px;
+    font-family: var(--fuente-redondeada);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-texto);
+    border-top: 1px dashed var(--color-borde);
+    margin-top: 5px;
+    padding-top: 15px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--color-tarjeta);
+    border-top: 1px solid var(--color-borde);
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.footer-columna {
+    background-color: var(--color-blanco);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* SUBTÍTULOS DEL FOOTER (Dorado) */
+.footer-subtitulo {
+    display: block;
+    font-family: var(--fuente-secundaria);
+    font-size: 1.05rem;
+    color: var(--color-dorado);
+    font-weight: bold;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 6px;
+}
+
+.footer-columna ul {
+    list-style: none;
+}
+
+.footer-columna li {
+    font-family: var(--fuente-redondeada);
+    font-size: 0.88rem;
+    color: var(--color-texto-suave);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.footer-columna li::before {
+    content: "•";
+    color: var(--color-dorado);
+    position: absolute;
+    left: 0;
+}
+
+.footer-redes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-red {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: var(--fuente-redondeada);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-red svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--color-texto);
+    transition: fill 0.3s ease;
+}
+
+.btn-red:hover {
+    border-color: var(--color-dorado);
+    color: var(--color-dorado);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(196, 162, 122, 0.15);
+}
+
+.btn-red:hover svg {
+    fill: var(--color-dorado);
+}
+
+.footer-derechos {
+    font-family: var(--fuente-redondeada);
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+    margin-top: 15px;
+}
+
+/* --- BOTONES FLOTANTES --- */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    background-color: #C4A27A;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-whatsapp-flotante svg {
+    width: 28px;
+    height: 28px;
+    fill: #FFFFFF;
+}
+
+.btn-whatsapp-flotante:hover {
+    transform: scale(1.08);
+}
+
+#btnTop {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    z-index: 98;
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#btnTop:hover {
+    background-color: var(--color-tarjeta);
+    border-color: var(--color-dorado);
+    color: var(--color-dorado);
+    transform: translateY(-3px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- CRONOGRAMA --- */
+.cronograma-seccion {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 60px 40px;
+    margin: 50px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cronograma-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+/* SUBTÍTULOS DEL CRONOGRAMA (Dorado) */
+.cronograma-header .nosotros-titulo,
+#cronograma .nosotros-titulo {
+    font-family: var(--fuente-secundaria), 'Helvetica Neue';
+    font-weight: normal !important;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: var(--color-dorado);
+    margin-bottom: 12px;
+}
+
+.cronograma-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 40px;
+}
+
+.cronograma-card {
+    background: transparent;
+    border: none;
+    border-top: 2px solid var(--color-dorado);
+    border-radius: 0;
+    padding: 25px 10px 0 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cronograma-card:hover {
+    transform: translateY(-3px);
+}
+
+.cronograma-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cronograma-num {
+    font-family: var(--fuente-secundaria);
+    font-size: 1.8rem;
+    color: var(--color-dorado);
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.cronograma-badge {
+    font-family: var(--fuente-redondeada);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-dorado);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* TÍTULO DE TARJETA EN CRONOGRAMA (Dorado) */
+.cronograma-card-titulo {
+    font-family: var(--fuente-secundaria);
+    font-size: 1.25rem;
+    color: var(--color-dorado);
+    margin-bottom: 15px;
+}
+
+/* LISTA DEL CRONOGRAMA */
+.cronograma-lista {
+    list-style: none;
+    font-family: var(--fuente-redondeada);
+    font-size: 0.93rem;
+    color: var(--color-texto);
+    line-height: 1.8;
+}
+
+.cronograma-lista li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.cronograma-lista li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-dorado);
+}
+
+.cronograma-lista strong {
+    color: var(--color-texto);
+    font-weight: 700;
+}
+
+.nosotros-intro {
+    font-family: Georgia;
+    color: var(--color-texto-suave);
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .cronograma-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cronograma-seccion {
+        padding: 40px 20px;
+    }
+
+    .carrusel-contenedor {
+        height: 250px;
+    }
+
+    .header-brand-title {
+        font-size: 0.9rem;
+    }
+}
